@@ -29,26 +29,26 @@ public class DeliveryCostTest {
             5);
 
     @Test
-    public void calculatingTheCostOfAStandardParcel() {
+    public void costStandardParcel() {
         int price = standardParcelTest.calculateDeliveryCost(standardParcelTest.getWeight());
         Assertions.assertEquals(10, price);
 
     }
 
     @Test
-    public void calculatingTheCostOfFragileParcel() {
+    public void costFragileParcel() {
         int price = fragileParcelTest.calculateDeliveryCost(fragileParcelTest.getWeight());
         Assertions.assertEquals(12, price);
     }
 
     @Test
-    public void calculatingTheCostOfAPerishableParcel() {
+    public void costPerishableParcel() {
         int price = perishableParcelTest.calculateDeliveryCost(perishableParcelTest.getWeight());
         Assertions.assertEquals(6, price);
     }
 
     @Test
-    public void checkingTheMethodOperationIsExpired() {
+    public void checkingIsExpired() {
         boolean isExpectedExpired1 = perishableParcelTest.isExpired(11);
         Assertions.assertFalse(isExpectedExpired1);
         boolean isExpectedExpired2 = perishableParcelTest.isExpired(20);
@@ -56,7 +56,7 @@ public class DeliveryCostTest {
     }
 
     @Test
-    public void checkingTheAdditionOfANewParcelToTheBox() {
+    public void checkAddNewParcelBox() {
         ParcelBox<StandardParcel> standardBoxTest = new ParcelBox<>(10);
         StandardParcel standardParcel1 = new StandardParcel(
                 "bryansk",
